@@ -254,6 +254,102 @@ svg {
     left:100%;
 }
 /*------------------------*/
+@media screen and (max-width:790px) {
+    #header {
+        display: block;
+    }
+    #logo {
+        width:100%;
+        height: auto;
+        text-align: center;
 
+    }
+    #logo img {
+        width:50%;
+    }
+    #headRight {
+        width:100%;
+        border-bottom: 1px solid #D8DEE3;
+    }
+}
 
+@media screen and (max-width:790px) {
+	#logo {
+	        display: block;
+	    }
+
+	#headRight {
+	    width:100%;
+	    padding: 0 8px;
+	}
+}
+@media screen and (max-width:590px) {
+    #headRight {
+        flex-wrap: wrap;
+        justify-content: space-between;       
+    }
+   #lang {
+    position: absolute;
+    left: 80%;
+   }
+   #dollar {
+    position: absolute;
+    top:20px;
+    left: 3%;
+   }
+   #logo img{
+    margin-left: 25px;
+   }
+    #dollar, #lang {
+        padding-top: 10px;
+    }
+    #lang {
+        background-color: #F2F4F6; 
+        top:25px;
+    }
+    .headRight {
+        height: 35px;
+    }
+    select {
+        background-color: #F2F4F6;
+    }
+}
+@media screen and (max-width:490px) {
+    #iconHeadRight {
+        flex-wrap: wrap;
+    }
+    #lang {
+    left: 75%;
+   }
+   #logo img {
+        width:30%;
+        padding-left: 10px;
+    }
+}    
+@media screen and (max-width:390px) {
+    #logo img {
+        position: relative;
+        top: -20px;
+    }
+    #lang {
+        left: 65%;
+    }
+    #iconMiddle img {
+      margin: 5px 0;
+    }
+    #account {
+        padding-left: 0;
+    }
+    #iconMiddle {
+        padding-right: 0;
+    } 
+}
+@media screen and (max-width:330px) {
+    #iconMiddle, #account {
+        border: none;
+    }
+    #account {
+    	padding-right: 0;
+    }
+}
 </style>
