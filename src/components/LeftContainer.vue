@@ -1,6 +1,6 @@
 <template>
 	<div id="leftContainer">
-        <nav id="menuVertical">
+        <nav id="menuVertical" v-on:click="clickMenuVertical">
             <ul>
                 <li>
                     <a href="#" class="contact contact_active">
@@ -57,20 +57,38 @@
                 </li>
             </ul>
         </nav>
-    	<div id="menuScroll" ><img src="../../img/spFigure7.png"></div>    
+    	<div id="menuScroll" v-on:click="clickMenuScroll" ><img src="../../img/spFigure7.png"></div>    
     </div>
 
 </template>
 
 <script>
 export default {
-	name: 'LeftContainer'
+	name: 'LeftContainer',
+    methods: {
+        clickMenuScroll:()=>{
+            document.getElementById('menuVertical').classList.toggle('unvisible');
+            setTimeout(function(){ document.getElementById('leftContainer').classList.toggle('close')}, 600);
+            document.getElementById('menuScroll').classList.toggle('open');
+        },
+        clickMenuVertical: (e)=>{
+            if (e.target.toString() == '[object HTMLUListElement]') return;
+            let menuVertical = document.getElementById('menuVertical');
+            let actived = menuVertical.querySelector('.contact_active');
+            if (actived) actived.classList.remove('contact_active');
+            let target = e.target;
+            while (!target.classList.contains('contact')) {
+                target = target.parentNode;
+            };
+            target.classList.add('contact_active');
+        }
+    }
 }
 </script>
 
 <style>
 #leftContainer {
-    width: 220px;
+    min-width: 220px;
     background-color: #F2F4F6;
     height: 100%;
     
@@ -168,72 +186,7 @@ export default {
     transform: rotate(180deg);
 }
 
-/* Меню випадаюче*/
-.navMenuHor ul {
-    padding: 0;
-    margin:0;
-    list-style: none;
-    position: relative;
-    z-index: 100;
 
-}
-.navMenuHor ul li {
-    margin: 0 -7px 0 0;
-    display: inline-block;
-    background-color: #fff;
-    padding-left: 5px;
-}
-.navMenuHor a {
-    display: inline-block;
-    color:  #278FFF;
-    font-size: 24px;
-    text-decoration: none;
-}
-.navMenuHor span {
-    padding: 0 7px;
-}
-.navMenuHor li > img {
-    position: relative;
-    top: -12px;
-}
-
-.navMenuHor :hover {
-    background-color: #fff;
-    color: #34D8FF;/**/
-    z-index: 100;
-
-}
-.navMenuHor ul ul {
-    border: 1px solid #D8DEE3;
-    border-radius: 3px;
-    margin-left: -6px;
-    display:none;
-    position: absolute;
-    top:100%;
-}
-.navMenuHor ul li:hover > ul {
-    display: inherit;
-
-}
-svg {
-    z-index: 1;
-}
-
-.navMenuHor ul ul li {
-    padding-left: 5px;
-    min-width: 170px;
-    float:none;
-    display:list-item;
-    position: relative;
-    left: -40%;
-}
-
-/*третій рівень*/
-.navMenuHor ul ul ul {
-    position: absolute;
-    top:0;
-    left:100%;
-}
 /*------------------------*/
 @media screen and (max-width:790px) {
     .contact_img {

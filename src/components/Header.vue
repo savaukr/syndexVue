@@ -9,29 +9,26 @@
                         <ul>
                             <li>
                                 <a href="#"><img src="../../img/icon_dollar.png"><span>0.00</span></a>
-                                <img src="../../img/figure7Blue.png">
-                                <ul>
-                                    <li><a href="#">Themes</a></li>
-                                    <li><a href="#">Plugins</a>
+                                <img src="../../img/figure7Blue.png" >
+                                <ul class="level1">
+                                    <li><a href="#">Menu1</a></li>
+                                    <li><a href="#">Menu2</a>
                                         <ul>
-                                            <li><a href="#">Stuff</a></li>
-                                            <li><a href="#">Things</a></li>
-                                            <li><a href="#">Other Stuff</a></li>
+                                            <li><a href="#">Menu2_1</a></li>
+                                            <li><a href="#">Menu2_2</a></li>
+                                            <li><a href="#">Menu2_3</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Tutorials</a>
+                                    <li><a href="#">Menu3</a>
                                         <ul>
-                                            <li><a href="#">Stuff</a></li>
-                                            <li><a href="#">Things</a></li>
+                                            <li><a href="#">Menu3_1</a></li>
+                                            <li><a href="#">Menu3_2</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </nav>
-
-                   <!-- <img src="./img/icon_dollar.png">
-                    <span>0.00 <img src="../../img/figure7Blue.png"></span>-->
                 </div>
                 <div id="lang" class="headRight">
                     <span>
@@ -42,18 +39,38 @@
                         </select>
                     </span>
                     <img  id = "fig" src="../../img/figure7Blue.png" alt="">
-                        <!--<span>РУС</span>
-                    <img src="../../img/figure7Blue.png">-->
                 </div>
                 <div id="iconMiddle" class="headRight">
-                    <img src="../../img/alarm.png">
-                    <span id="countAlarm">1</span>
-                    <img src="../../img/figure10.png">
-                    <img src="../../img/figure11.png">
+                    <a href="#"><img src="../../img/alarm.png"></a>
+                    <a href="#"><span id="countAlarm">1</span></a>
+                    <a href="#"><img src="../../img/figure10.png"></a>
+                    <a href="#"><img src="../../img/figure11.png"></a>
                 </div>
                 <div id="account" class="headRight">
-                    <img src="../../img/figure8.png" alt="">
-                    <span id="accountName">Accountname <img src="../../img/figure7.png"></span>
+                    <nav class="navMenuHor">
+                        <ul>
+                            <li>
+                                <a href="#"><img src="../../img/figure8.png" alt="">
+                                <span id="accountName">Accountname <img src="../../img/figure7.png"></span></a>
+                                <ul class="level1">
+                                    <li><a href="#">Menu1</a></li>
+                                    <li><a href="#">Menu2</a>
+                                        <ul>
+                                            <li><a href="#">Menu2_1</a></li>
+                                            <li><a href="#">Menu2_2</a></li>
+                                            <li><a href="#">Menu2_3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Menu3</a>
+                                        <ul>
+                                            <li><a href="#">Menu3_1</a></li>
+                                            <li><a href="#">Menu3_2</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -62,6 +79,8 @@
 <script>
 	export default {
 		name: 'Header',
+        methods: {
+        }
 	}
 </script>
 
@@ -119,8 +138,13 @@
     border-right: 1px solid #D8DEE3;   
     float:right;
 }
-#iconMiddle img:nth-child(3){
+#iconMiddle a:nth-child(3){
     padding-right: 15px;
+}
+#account a {
+    color: #000;
+    font-size:16px;
+
 }
 #accountName {
     position: relative;
@@ -143,6 +167,12 @@
     float: right;
 
 }
+#fig {
+    position: relative;
+    left: -20px;
+    top: -4px;
+}
+
 
 select{
 -moz-appearance: none;
@@ -158,15 +188,6 @@ font-family: "OpenSans-Semibold";
 -moz-user-select: -moz-none;
 -ms-user-select: none;
  user-select: none;
-
-
-
-}
-#fig {
-    position: relative;
-    left: -20px;
-    top: -4px;
-
 }
 
 select:after{
@@ -180,27 +201,17 @@ select:after{
   top: 5px;
 }
 
-/* menu dollar*/
-/*------------------------*/
-.navMenuHor  {
-
-}
+/* Меню випадаюче*/
 .navMenuHor ul {
     padding: 0;
     margin:0;
     list-style: none;
     position: relative;
-    z-index: 100;
-
 }
 .navMenuHor ul li {
-    margin: 0 -7px 0 0;
+    /*margin: 0 -7px 0 0;*/
     display: inline-block;
-    background-color: #fff;
     padding-left: 5px;
-}
-.navMenuHor ul li  img {
-    
 }
 .navMenuHor a {
     display: inline-block;
@@ -215,45 +226,44 @@ select:after{
     position: relative;
     top: -12px;
 }
-
 .navMenuHor :hover {
-    background-color: #fff;
-    color: red;/**/
+    color: #34D8FF;/**/
     z-index: 100;
-
 }
-
 .navMenuHor ul ul {
-    border: 1px solid #D8DEE3;
-    border-radius: 3px;
+    border: 2px solid #D8DEE3;
+    border-radius: 5px;
     margin-left: -6px;
     display:none;
     position: absolute;
-    top:100%;
+    top:95%;
+    left:40%;
+    z-index: 100;
+}
+.level1 li{
+    background-color:#E9ECEF;
 }
 .navMenuHor ul li:hover > ul {
     display: inherit;
-
-}
-svg {
-    z-index: 1;
 }
 
 .navMenuHor ul ul li {
     padding-left: 5px;
-    min-width: 170px;
+    min-width: 110px;
     float:none;
     display:list-item;
     position: relative;
 }
-
-/*третій рівень*/
-.navMenuHor ul ul ul {
+.navMenuHor ul ul a {
+    font-size:16px;
+}
+.navMenuHor ul ul ul { /*третій рівень*/
     position: absolute;
     top:0;
     left:100%;
 }
-/*------------------------*/
+
+
 @media screen and (max-width:790px) {
     #header {
         display: block;
