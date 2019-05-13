@@ -52,7 +52,7 @@
                             <li>
                                 <a href="#"><img src="../../img/figure8.png" alt="">
                                 <span id="accountName">Accountname <img src="../../img/figure7.png"></span></a>
-                                <ul class="level1">
+                                <ul class="level1 level1Account">
                                     <li><a href="#">Menu1</a></li>
                                     <li><a href="#">Menu2</a>
                                         <ul>
@@ -142,13 +142,12 @@
     padding-right: 15px;
 }
 #account a {
-    color: #000;
     font-size:16px;
-
 }
 #accountName {
     position: relative;
     top: -10px;
+    color: #000;
 }
 #countAlarm {
     color: #fff;
@@ -165,14 +164,12 @@
     color: #278FFF;
     padding-left: 10px;
     float: right;
-
 }
 #fig {
     position: relative;
     left: -20px;
     top: -4px;
 }
-
 
 select{
 -moz-appearance: none;
@@ -209,7 +206,6 @@ select:after{
     position: relative;
 }
 .navMenuHor ul li {
-    /*margin: 0 -7px 0 0;*/
     display: inline-block;
     padding-left: 5px;
 }
@@ -243,6 +239,9 @@ select:after{
 .level1 li{
     background-color:#E9ECEF;
 }
+.level1Account a {
+    color: #000;
+}
 .navMenuHor ul li:hover > ul {
     display: inherit;
 }
@@ -253,6 +252,7 @@ select:after{
     float:none;
     display:list-item;
     position: relative;
+    line-height: 25px;
 }
 .navMenuHor ul ul a {
     font-size:16px;

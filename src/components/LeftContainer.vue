@@ -95,7 +95,7 @@ export default {
 }
 
 #menuVertical {
-    width:97%;
+    width:96%;
     height: 100%;
     float:left;
     box-sizing: border-box;
@@ -152,16 +152,16 @@ export default {
     fill: #278FFF;
 }
 #menuScroll {
-    width: 3%;
     float: right;
     height: 100%;
-    width: 5px;
+    width: 4%;
     box-sizing: border-box;
     background-color: #E9ECEF;
 }
 #menuScroll img {
     position: relative;
     top:50%;
+    padding-left:2px;
 }
 
 .unvisible {
